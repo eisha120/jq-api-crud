@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grocery Store Products</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="container">
+  <h1>Grocery Store Products</h1>
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addModal">
+    Add Product
+  </button>
+
+  <!-- Modal for Adding Product -->
+  <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <!-- Modal content for Adding Product -->
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add New Product</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="productName">Product Name</label>
+            <input type="text" class="form-control" name="productName" id="productName" placeholder="Product Name">
+          </div>
+          <div class="form-group">
+            <label for="productDescription">Description</label>
+            <textarea class="form-control" name="productDescription" id="productDescription" rows="3" placeholder="Product Description"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="productPrice">Price</label>
+            <input type="number" class="form-control" name="productPrice" id="productPrice" placeholder="Price">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="addProductBtn" class="btn btn-info">Add Product</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="products">
+      <!-- Products will be dynamically added here -->
+    </tbody>
+  </table>
+
+  <!-- Modal for Updating Product -->
+  <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <!-- Modal content for Updating Product -->
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Update Product</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="updateProductId" /> <br />
+          <div class="form-group">
+            <label for="updateProductName">Product Name</label>
+            <input type="text" class="form-control" name="updateProductName" id="updateProductName" placeholder="Product Name">
+          </div>
+          <div class="form-group">
+            <label for="updateProductDescription">Description</label>
+            <textarea class="form-control" name="updateProductDescription" id="updateProductDescription" rows="3" placeholder="Product Description"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="updateProductPrice">Price</label>
+            <input type="number" class="form-control" name="updateProductPrice" id="updateProductPrice" placeholder="Price">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="updateProductBtn" class="btn btn-primary">Update Product</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for interacting with the API -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="jq.js"></script>
+</body>
+</html>
